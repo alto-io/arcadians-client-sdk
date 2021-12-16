@@ -1,1 +1,5 @@
-console.log("ok");
+function arcadians() {
+    console.log("arcadians");
+}
+
+module.exports.arcadians = arcadians;

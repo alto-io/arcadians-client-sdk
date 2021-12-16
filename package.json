@@ -4,7 +4,9 @@
   "description": "Add utility to your NFTs!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --config webpack.config.js --open"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,25 @@
   "bugs": {
     "url": "https://github.com/alto-io/arcadians-client-sdk/issues"
   },
-  "homepage": "https://github.com/alto-io/arcadians-client-sdk#readme"
+  "homepage": "https://github.com/alto-io/arcadians-client-sdk#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-syntax-top-level-await": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "babel-loader": "^8.2.3",
+    "file-loader": "^4.3.0",
+    "html-webpack-plugin": "^5.5.0",
+    "raw-loader": "^3.1.0",
+    "terser-webpack-plugin": "^2.3.8",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.16.3",
+    "axios": "^0.24.0",
+    "ethers": "^5.5.2"
+  }
 }

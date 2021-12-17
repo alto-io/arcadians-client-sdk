@@ -1,6 +1,6 @@
 {
   "name": "arcadians-client-sdk",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Add utility to your NFTs!",
   "main": "index.js",
   "scripts": {

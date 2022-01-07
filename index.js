@@ -1,2 +1,2 @@
-import arcadians from "./lib/arcadians.js";
-export default arcadians;
+import Arcadians from "./lib/arcadians.js";
+export default Arcadians;

@@ -33,7 +33,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
     library: {
-      name: "arcadians",
+      name: "Arcadians",
       type: "umd",
       export: "default",
     },

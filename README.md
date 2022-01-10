@@ -84,7 +84,7 @@ Add test mode to the mix
 ```
 let testMode = true;
 let testAddress = "0xf0103243f4d22b5696588646b21313d85916a16a";
-let arc = new Arcadians();
+let arc = new Arcadians(testMode, testAddress);
 arc.init(10, (currentNft) => {
     console.log(currentNft)
 }).then((result) => {

@@ -19,10 +19,11 @@ Load acardians.min.js using a script tag.
 ```
 <script src="https://unpkg.com/arcadians-client-sdk@0.3.0/dist/arcadians.min.js"></script>
 <script>
-    let arc = new Arcadians();
-    arc.showNftsWindow().then((result) => {
-        console.log(result);
-    });
+let arc = new Arcadians();
+function onUserSelect(selectedNft) {
+  console.log(selectedNft);
+}
+arc.showNftsWindow(onUserSelect);
 </script>
 ```
 

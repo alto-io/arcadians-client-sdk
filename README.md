@@ -17,10 +17,10 @@ or
 Load acardians.min.js using a script tag.
 
 ```
-<script src="https://unpkg.com/arcadians-client-sdk@0.2.2/dist/arcadians.min.js"></script>
+<script src="https://unpkg.com/arcadians-client-sdk@0.3.0/dist/arcadians.min.js"></script>
 <script>
     let arc = new Arcadians();
-    arc.init().then((result) => {
+    arc.showNftsWindow().then((result) => {
         console.log(result);
     });
 </script>
@@ -32,9 +32,14 @@ Production
 
 ```
 let arc = new Arcadians();
-arc.init().then((result) => {
-    console.log(result);
-});
+
+// Callback executed when a user selects a NFT from the window.
+// Returns an object containing the NFT metadata or false if the user closes the window.
+function onUserSelect(selectedNft) {
+  console.log(selectedNft);
+}
+
+arc.showNftsWindow(onUserSelect);
 ```
 
 Test mode
@@ -43,51 +48,38 @@ Test mode
 let testMode = true;
 let testAddress = "0xf0103243f4d22b5696588646b21313d85916a16a";
 let arc = new Arcadians(testMode, testAddress);
-arc.init().then((result) => {
-    console.log(result);
-});
+
+function onUserSelect(selectedNft) {
+  console.log(selectedNft);
+}
+
+arc.showNftsWindow(onUserSelect);
 ```
 
 Limit maximum NFTs loaded
 
 ```
-let arc = new Arcadians();
-arc.init(10).then((result) => {
-    console.log(result);
-});
+let arc = new Arcadians(null, null, 5);
+
+function onUserSelect(selectedNft) {
+  console.log(selectedNft);
+}
+
+arc.showNftsWindow(onUserSelect);
 ```
 
-Add your custom callback on each NFT load
-
-```
-let arc = new Arcadians();
-arc.init(null, (currentNft) => {
-    console.log(currentNft)
-}).then((result) => {
-    console.log(result);
-});
-```
-
-Use both NFT limit and callback
+Add your custom callback on each NFT loaded
 
 ```
 let arc = new Arcadians();
-arc.init(10, (currentNft) => {
-    console.log(currentNft)
-}).then((result) => {
-    console.log(result);
-});
-```
 
-Add test mode to the mix
+function onUserSelect(selectedNft) {
+  console.log(selectedNft);
+}
 
-```
-let testMode = true;
-let testAddress = "0xf0103243f4d22b5696588646b21313d85916a16a";
-let arc = new Arcadians(testMode, testAddress);
-arc.init(10, (currentNft) => {
-    console.log(currentNft)
-}).then((result) => {
-    console.log(result);
-});
+function onNftLoaded(loadedNft) {
+  console.log(loadedNft);
+}
+
+arc.showNftsWindow(onUserSelect, onNftLoaded);
 ```

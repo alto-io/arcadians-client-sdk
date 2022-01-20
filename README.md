@@ -17,7 +17,7 @@ or
 Load acardians.min.js using a script tag.
 
 ```
-<script src="https://unpkg.com/arcadians-client-sdk@0.3.5/dist/arcadians.min.js"></script>
+<script src="https://unpkg.com/arcadians-client-sdk@0.3.6/dist/arcadians.min.js"></script>
 <script>
 let arc = new Arcadians();
 function onUserSelect(selectedNft) {

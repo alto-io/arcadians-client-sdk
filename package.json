@@ -39,7 +39,6 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "axios": "^0.24.0",
-    "ethers": "^5.5.2"
+    "axios": "^0.24.0"
   }
 }

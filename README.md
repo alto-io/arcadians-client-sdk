@@ -26,7 +26,7 @@ Load acardians.min.js using a script tag:
 
 ```
 
-<script src="https://unpkg.com/arcadians-client-sdk@0.4.3/dist/arcadians.min.js"></script>
+<script src="https://unpkg.com/arcadians-client-sdk@0.4.4/dist/arcadians.min.js"></script>
 
 <script>
 
@@ -91,6 +91,18 @@ Get NFTs metadata without injecting a window:
 ```
 
 arc.getUserNfts().then((result) => {
+	console.log(result);
+});
+
+```
+
+Get NFTs metadata without logging in into MetaMask by using a custom address:
+
+```
+
+let customAddress = "0xf0103243f4d22b5696588646b21313d85916a16a";
+
+arc.getUserNftsWithCustomAddress(customAddress).then((result) => {
 	console.log(result);
 });
 
